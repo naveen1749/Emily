@@ -1,5 +1,9 @@
 # Emily
 
+REQUIREMENTS :
+  1) termux
+  2) termux-api ( without api some commands doesn't work properly)
+
 Installation :
 
 1) download termux app
@@ -11,7 +15,23 @@ apt update && apt upgrade && pkg install git && git clone https://github.com/nav
 
 cd Emily
 
-4) in that folder you can see 3 files firstly you can install requirements.txt 
+4) in that folder you can see 3 files firstly you can install requirements.txt using following command
+
+Chmod 777 requirements.txt
+./requirements.txt
+
 5) after successfully installation.  Run the main code with following command
 
 bash Emily.sh
+
+
+Add on your bashrc file to start automatically:
+
+1) open termux app type following commands:
+
+cd
+nano ~/.bashrc
+
+2) its now open a editor page.  copy below text and paste it on your termux app. After successfully pasthing save the file pressing CTRL+X and say 'Y' for confirming.
+
+3) from now your terminal opens emily directly. 
