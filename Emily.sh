@@ -118,7 +118,43 @@ show_usage(){
     echo " servers =>    see available local servers and start it."
     echo " apache  =>   start apache server "
     echo " tphp    =>   start php server"
+    echo "status   =>	save your whatsapp status "
+    echo "			PATH : /sdcard/Emily/Whatsapp_status"
+    echo "update   =>	check any updates available. and update directly."
+    echo " msg	   =>	send message from termux [ type 'msg -h' to see more options]"
+    echo "alarm    =>	set a alarm"
+    echo "alarms   =>	see saved alarms"
+    echo " d	   =>	open some most wanted directory's directly with just entering the name"
+    echo "					EX :  d Whatsapp "
+    echo "					its open whatsapp folder directly where ever you have you will be moved to /sdcard/whatsapp/ "
+    echo " c       =>	call from your contacts numbers "
+    echo "					ex : c {contact name}
+    echo "					but you must enter the correct name"
+    echo " open    =>	open a file using other apps "
+    echo "				EX : when you want to edit a text file then type OPEN and next enter the file name its asking to choose platform choose what you wish"
+    ehco " remember=>	you forgeted things or words give to emily its remind you on specific time "
+    echo " msf5    =>	install metasploit hacking tool on your termux "
+    echo " reset   =>	reset your terminal [ your data will loss perminantly "
+    echo " restart =>	restart your terminal [useful for when you facing some issues and your data will be safe"
+    echo " call    =>	call from your terminal [ type 'call -h' to see helping menu"
+    echo " tphp    =>	start php server"
+    echo " apache  =>	start apache server"
+    echo " servers =>	see available servers and start it"
+    echo " yt	   =>	download youtube videos "
+    echo "			EX : yt {url} "
+    echo " translate=>	translate from english to telugu [ dictonary ]"
     
+
+
+
+
+
+    echo "		SOCAIL MEDIA "
+    ecco " youtube  =>	open TELUGU HACKERS HUB youtube channel"
+    echo " instagram=>	open TELUGU HACKERS HUB instagram page"
+    echo " wpgroup  =>	join TELUGU HACKERS HUB whatsapp group"
+    echo " telegram =>	join TELUGU HACKERS HUB telegram group"
+
     #upcomming progress
     echo " update  =>      "
     echo " servers"
@@ -349,7 +385,7 @@ if [ $visit_count_for_password == 1 ]; then
     echo
     echo "          Mobile number :- +917780721677"  
     echo
-    echo "          Gmail :-"  
+    echo "          Gmail :-  teluguhackersyt@gmail.com"  
     echo
     echo "   Hi Iam ðŸ¤– Emily ðŸ¤– please enter the password to verify to me if your our commander or not!":  
     echo
@@ -388,7 +424,9 @@ home1_banner(){
     echo
     echo "         welcome $owner_name"   
     echo
-    echo   "        how can i help you ? "  
+    echo   "        how can i help you ? "
+    echo "  install termux-api. either it's not work properly"
+    echo " turn on your mobile data for some commands."
    if [[ ! -d /data/data/com.termux/files/usr/etc/Emily ]]; then
          cd /data/data/com.termux/files/usr/etc
          mkdir Emily
@@ -468,18 +506,19 @@ Emily_menu(){
 	 			 mv * /sdcard/Emily/Whatsapp_statuses
 				 cd ->/dev/null
 				 home1_menu ;;
-	 youtube | subscribe ) termux-open-url "https://www.youtube.com/c/TeluguHackersHub"
-	 			echo "opening YOUTUBE"
+	 youtube | subscribe )  echo "opening YOUTUBE"
+				termux-open-url "https://www.youtube.com/c/TeluguHackersHub"
 				home1_menu ;;
-	instagram ) termux-open-url "https://www.instagram.com/Telugu_Hackers_Hub/"
-		    echo "opening INSTAGRAM"
+	instagram  )echo "opening INSTAGRAM"
+		    termux-open-url "https://www.instagram.com/Telugu_Hackers_Hub/"
 		    home1_menu ;;
-         "join on whatsapp" | wpgroup ) termux-open-url "https://telugu-hackers.blogspot.com/p/telugu-hackers-hub-whats-app-group.html?m=1"
-	 				echo "before joining the group. read terms and conditions carefully!."
+         "join on whatsapp" | wpgroup ) echo "before joining the group. read terms and conditions carefully!."
 					echo " open whatsapp group link."
+					sleep 02
+					termux-open-url "https://telugu-hackers.blogspot.com/p/telugu-hackers-hub-whats-app-group.html?m=1"
 					home1_menu ;;
-	 telegram | "join on telegram" ) termux-open-url "https://t.me/s/telugu_hackers_hub"
-	 				 echo "opening telegram"
+	 telegram | "join on telegram" ) echo "opening telegram"
+					 termux-open-url "https://t.me/s/telugu_hackers_hub"
 					 home1_menu ;;
          update | upgrade | "check version" ) version=$(cd && cd Emily && cat .version)
 					      cd /data/data/com.termux/files/usr
@@ -521,7 +560,7 @@ Emily_menu(){
                                    termux-tts-speak "here's my limited operations" ;;
          d | D ) cmd=$menu
                  menu=$(echo $cmd | awk '{print $2}')
-                    if [[ -d /sdcard/$menu || -d /storage/$sdcard_name/$menu ]] || [[ -d /data/data/com.termux/files/$foldername || -d /data/data/com.termux/files/home/$foldername ]]; then
+                    if [[ -d /sdcard/$menu || -d /storage/$sdcard_name/$menu ]] || [[ -d /data/data/com.termux/files/$menu || -d /data/data/com.termux/files/home/$menu ]]; then
                         while [ -d /sdcard/$menu ]
                         do
                             cd /sdcard/$menu
@@ -529,16 +568,16 @@ Emily_menu(){
                             home1_menu
                             break
                         done
-                        while [ -d /data/data/com.termux/files/$foldername ]
+                        while [ -d /data/data/com.termux/files/$menu ]
                         do
-                            cd /data/data/com.termux/files/$foldername
+                            cd /data/data/com.termux/files/$menu
                             ls
                             home1_menu
                             break
                         done
-                        while [ -d /data/data/com.termux/files/home/$foldername ]
+                        while [ -d /data/data/com.termux/files/home/$menu ]
                         do
-                            cd /data/data/com.termux/files/home/$foldername
+                            cd /data/data/com.termux/files/home/$menu
                             ls
                             home1_menu
                             break
@@ -552,10 +591,10 @@ Emily_menu(){
                             break
                             done
                             home1_menu
-                    elif [ -d /data/data/com.termux/files/usr/$foldername ]; then
-                        while [ -d /data/data/com.termux/files/usr/$foldername ]
+                    elif [ -d /data/data/com.termux/files/usr/$menu ]; then
+                        while [ -d /data/data/com.termux/files/usr/$menu ]
                         do
-                            cd /data/data/com.termux/files/usr/$foldername
+                            cd /data/data/com.termux/files/usr/$menu
                             ls
                             home1_menu
                             break
@@ -565,7 +604,7 @@ Emily_menu(){
                         home1_menu
                     fi ;;
          [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ) echo " calling to $menu " && termux-telephony-call $menu 
-                                     home1_menu ;;
+							      home1_menu ;;
          c | C ) cmd=$menu
                     contact_name=$(echo $cmd | awk '{print $2}')
                     if [ $(termux-contact-list | grep -i -A1 $contact_name) ]; then
@@ -652,11 +691,10 @@ Emily_menu(){
                         cd ->/dev/null
                         home1_menu ;;
          alarms | "show alarms" | "saved alarms" ) cd /data/data/com.termux/files/usr/etc/Emily/alarms
-                                                ls 
-                                                cat *
-                                    
-                                                cd ->/dev/null
-                                                home1_menu;;
+						   ls 
+                                                   cat *
+                                                   cd ->/dev/null
+                                                   home1_menu;;
         
                        
          sdcard | "external memory" | mem2 ) cd /storage;termux-setup-storage ;            while [ $(ls | wc -l) != 2 ]
@@ -795,13 +833,17 @@ Emily_menu(){
                                 done ;;
          reset ) let "visit_count_for_username-=1"
                  let "visit_count_for_password-=1"
-                 bash n.sh ;;
+		 cd /data/data/com.termux/files/home
+		 rm -rf Emily
+		 apt-get upadte && upgarde
+		 pkg install git
+		 git clone https://github.com/naveen1749/Emily
+		 echo " Almost done. " 
+		 sleep 02
+		 echo " close your terminal and see changes" ;;
          restart | clr ) clear
                          home1_banner ;;
-         update ) #enter the site details WHEN you publish the code
-                # while [ $(command -v )]
-                echo " not completed"
-                home1_menu;; 
+        
          figset) fingerprint_function ;;
          call | CALL ) cmd=$menu
                 call_usage(){
@@ -882,9 +924,9 @@ Emily_menu(){
                                                 echo -n "enter port (default port : $default_port) : "
                                                 read port
                                                 port1="${port:-${default_port}}"
-                                                echo " location = /storage/emulated/Emily/index.php "  
+                                                echo " location = /sdcard/Emily/index.php "  
                                                 echo " starting php server.... "  
-                                                cd  /storage/emulated/0/Emily
+                                                cd  /sdcard/Emily
                                                 
                                                  php -S "$ip1:$port1" > /dev/null 2>&1 &
                                                  sleep 02
@@ -893,7 +935,7 @@ Emily_menu(){
 
                                                             echo " php server started "
                                                             echo " address :- $ip1:$port1"
-                                                            echo " adress :- /storage/emulated/0/Emily/index.php"
+                                                            echo " adress :- /sdcard/Emily/index.php"
                                                             home1_menu
                                                         else 
                                                             echo " somehting went wrong! please tey again "
@@ -1313,8 +1355,7 @@ Emily_menu(){
                                       echo -------------------------------------
                                       echo  $telugu_word
                                       echo -------------------------------------
-                                      termux-tts-speak "          For that word. Meaning in telugu. $telugu_word  "
-                                      home1_menu ;;
+				      home1_menu ;;
                                      
          notes | nt ) notes_usage(){
                         echo " save importent commands or any information with securly"
