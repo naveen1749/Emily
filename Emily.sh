@@ -128,7 +128,7 @@ show_usage(){
     echo "					EX :  d Whatsapp "
     echo "					its open whatsapp folder directly where ever you have you will be moved to /sdcard/whatsapp/ "
     echo " c       =>	call from your contacts numbers "
-    echo "					ex : c {contact name}
+    echo "					ex : c {contact name} "
     echo "					but you must enter the correct name"
     echo " open    =>	open a file using other apps "
     echo "				EX : when you want to edit a text file then type OPEN and next enter the file name its asking to choose platform choose what you wish"
