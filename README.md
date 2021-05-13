@@ -32,6 +32,11 @@ Add on your bashrc file to start automatically:
 cd
 nano ~/.bashrc
 
-2) its now open a editor page.  copy below text and paste it on your termux app. After successfully pasthing save the file pressing CTRL+X and say 'Y' for confirming.
+2) its now open a editor page.  copy below text and paste it on your termux app. 
 
-3) from now your terminal opens emily directly. 
+cd Emily
+bash Emily.sh
+
+3) After successfully pasthing save the file pressing CTRL+X and say 'Y' for confirming.
+
+4) from now your terminal opens emily directly. 
