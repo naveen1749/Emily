@@ -1,0 +1,5 @@
+apt get update && upgrade
+sleep 03 
+pkg install git
+pkg intsall figlet
+pkg install curl
